@@ -128,7 +128,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    REACT_BUILD_DIR / "static",         
+    REACT_BUILD_DIR / "static",
+    REACT_BUILD_DIR / "images",  
+]
+
+WHITENOISE_DIRS = [
+    REACT_BUILD_DIR / 'images',
 ]
 
 SIMPLE_JWT = {
@@ -148,3 +153,6 @@ REST_FRAMEWORK = {
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# CORS Settings
+CORS_ALLOW_ALL_ORIGINS = True
